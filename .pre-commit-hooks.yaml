@@ -1,0 +1,67 @@
+# Comments above each hook indicate the existing hook whose behaviour they mirror
+
+# https://github.com/PyCQA/autoflake/blob/main/.pre-commit-hooks.yaml
+- id: autoflake
+  name: autoflake
+  types: [python]
+  require_serial: true
+  language: script
+  entry: poetry-autoflake
+  args:
+  - "--in-place"
+  - "--expand-star-imports"
+  - "--remove-duplicate-keys"
+  - "--remove-unused-variables"
+# https://github.com/psf/black/blob/main/.pre-commit-hooks.yaml
+- id: black
+  name: black
+  description: "Black: The uncompromising Python code formatter"
+  types_or: [python, pyi]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: script
+  entry: poetry-black
+- id: black-jupyter
+  name: black-jupyter
+  description: "Black: The uncompromising Python code formatter (with Jupyter Notebook support)"
+  types_or: [python, pyi, jupyter]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: script
+  entry: poetry-black
+# https://github.com/PyCQA/flake8/blob/main/.pre-commit-hooks.yaml
+- id: flake8
+  name: flake8
+  description: "`flake8` is a command-line utility for enforcing style consistency across Python projects."
+  types: [python]
+  require_serial: true
+  language: script
+  entry: poetry-flake8
+# https://github.com/PyCQA/isort/blob/main/.pre-commit-hooks.yaml
+- id: isort
+  name: isort
+  types_or: [cython, pyi, python]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: script
+  entry: poetry-isort
+  args:
+  - "--filter-files"
+# https://github.com/pre-commit/mirrors-mypy/blob/main/.pre-commit-hooks.yaml
+- id: mypy
+  name: mypy
+  types_or: [python, pyi]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: script
+  entry: poetry-mypy
+  args:
+  - "--ignore-missing-imports"
+  - "--scripts-are-modules"
+# https://github.com/necaris/pre-commit-pyright/blob/master/.pre-commit-hooks.yaml
+- id: pyright
+  name: pyright
+  types: [python]
+  language: script
+  entry: poetry-pyright
+  pass_filenames: false
