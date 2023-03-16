@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "pre-commit-tools-via-poetry"
+version = "2.0.0"
+description = "pre-commit hooks to run tools with Poetry"
+authors = ["Luc Ritchie <luc.ritchie@gmail.com>"]
+license = "CC0-1.0"
+readme = "README.md"
+packages = [
+    { include = "wlr" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+identify = ">=1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+autoflake = "^1.0.0"
+black = "^23.1.0"
+flake8 = "^5.0.0"
+flake8-bugbear = "^23.1.0"
+isort = "^5.0.0"
+pre-commit = "^2.9.2"
+pyright = "^1.0.0"
+
+[tool.poetry.scripts]
+poetry-run-on-all-files = "wlr.poetry_run_on_all_files:main"
+
+[build-system]
+requires = ["poetry-core == 1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.autoflake]
+remove-all-unused-imports = true
+
+[tool.black]
+skip-string-normalization = "True"
+
+[tool.isort]
+profile = "black"
+
+[tool.pyright]
+pythonVersion = "3.7"

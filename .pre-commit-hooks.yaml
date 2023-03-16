@@ -58,6 +58,18 @@
   args:
   - "--ignore-missing-imports"
   - "--scripts-are-modules"
+- id: mypy-all-files
+  name: mypy (all files)
+  types_or: [python, pyi]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: python
+  language_version: python3
+  entry: poetry-run-on-all-files
+  args:
+  - mypy
+  - python
+  - pyi
 # https://github.com/RobertCraigie/pyright-python/blob/main/.pre-commit-hooks.yaml
 - id: pyright
   name: pyright
@@ -66,3 +78,15 @@
   minimum_pre_commit_version: 2.9.2
   language: script
   entry: poetry-pyright
+- id: pyright-all-files
+  name: pyright (all files)
+  types_or: [python, pyi]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: python
+  language_version: python3
+  entry: poetry-run-on-all-files
+  args:
+  - pyright
+  - python
+  - pyi
