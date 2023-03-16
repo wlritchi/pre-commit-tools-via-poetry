@@ -58,10 +58,11 @@
   args:
   - "--ignore-missing-imports"
   - "--scripts-are-modules"
-# https://github.com/necaris/pre-commit-pyright/blob/master/.pre-commit-hooks.yaml
+# https://github.com/RobertCraigie/pyright-python/blob/main/.pre-commit-hooks.yaml
 - id: pyright
   name: pyright
-  types: [python]
+  types_or: [python, pyi]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
   language: script
   entry: poetry-pyright
-  pass_filenames: false
