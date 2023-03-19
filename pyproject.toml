@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pre-commit-tools-via-poetry"
-version = "2.0.0"
+version = "2.1.0"
 description = "pre-commit hooks to run tools with Poetry"
 authors = ["Luc Ritchie <luc.ritchie@gmail.com>"]
 license = "CC0-1.0"

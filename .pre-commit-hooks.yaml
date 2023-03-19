@@ -90,3 +90,11 @@
   - pyright
   - python
   - pyi
+# https://github.com/charliermarsh/ruff-pre-commit/blob/main/.pre-commit-hooks.yaml
+- id: ruff
+  name: ruff
+  types_or: [python, pyi]
+  require_serial: true
+  minimum_pre_commit_version: 2.9.2
+  language: script
+  entry: poetry-ruff

@@ -29,7 +29,7 @@ easier to use these hooks and let Poetry manage the tools.
 To use these hooks, add the following to your `.pre-commit-config.yaml`:
 ```
 - repo: https://github.com/wlritchi/pre-commit-tools-via-poetry
-  rev: '2.0.0'
+  rev: '2.1.0'
   hooks:
   - id: autoflake
   - id: isort
@@ -51,6 +51,7 @@ the upstream or most commonly used community hook for that tool, if it exists.
 - [isort](https://pycqa.github.io/isort/)
 - [mypy](https://www.mypy-lang.org/) *see notes
 - [pyright](https://github.com/Microsoft/pyright) *see notes
+- [ruff](https://beta.ruff.rs/)
 
 ## Hook-specific notes
 
@@ -85,7 +86,6 @@ another file (for example, refactoring an interface but forgetting to update one
 implementation of it), the default mypy hook will not warn you about this error.
 See the section on all-files hooks for an alternative (but note the performance
 impact).
-
 
 ### Pyright
 
